@@ -1,0 +1,73 @@
+@import 'tailwindcss';
+
+:root {
+  --color-bg: #f8fafc;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f1f5f9;
+  --color-border: #e2e8f0;
+  --color-text: #0f172a;
+  --color-text-muted: #64748b;
+  --color-primary: #3b82f6;
+  --color-primary-hover: #2563eb;
+  --color-danger: #ef4444;
+  --color-success: #10b981;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --sidebar-width: 248px;
+  --titlebar-height: 40px;
+}
+
+html[data-theme='dark'] {
+  --color-bg: #0f172a;
+  --color-surface: #111c33;
+  --color-surface-muted: #1e293b;
+  --color-border: #273449;
+  --color-text: #f8fafc;
+  --color-text-muted: #94a3b8;
+  --color-primary: #60a5fa;
+  --color-primary-hover: #3b82f6;
+  --color-danger: #f87171;
+  --color-success: #34d399;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI Variable', 'Segoe UI', 'Inter', system-ui, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+button {
+  font-family: inherit;
+}
+
+[dir='rtl'] {
+  text-align: right;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-border);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
