@@ -45,7 +45,13 @@ export const IPC_CHANNELS = {
 
   // Settings
   settingsGet: 'settings:get',
-  settingsUpdate: 'settings:update'
+  settingsUpdate: 'settings:update',
+
+  // Overlay (region selection)
+  overlayRequestImage: 'overlay:request-image',
+  overlayImage: 'overlay:image',
+  overlaySelect: 'overlay:select',
+  overlayCancel: 'overlay:cancel'
 } as const
 
 export const DEFAULT_HOTKEYS: HotkeyBindings = {
