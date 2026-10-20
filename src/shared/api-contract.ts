@@ -1,9 +1,3 @@
-/**
- * The typed contract between the preload bridge and the renderer.
- * Preload implements ZucksApi; renderer consumes it via window.zucks.
- * Any change here MUST be mirrored in src/preload/index.ts.
- */
-
 import type { IpcResult } from './types/ipc'
 import type {
   CaptureHistoryItem,
@@ -50,7 +44,7 @@ export interface OcrResult {
 
 export interface CaptureApi {
   listSources(): Promise<IpcResult<ScreenSource[]>>
-  screenshot(mode: CaptureMode): Promise<IpcResult<CaptureResult>>
+  screenshot(mode: CaptureMode, sourceId?: string): Promise<IpcResult<CaptureResult>>
   startRecording(options: RecordingOptions): Promise<IpcResult<RecordingResult>>
   stopRecording(): Promise<IpcResult<RecordingResult>>
   history(): Promise<IpcResult<CaptureHistoryItem[]>>
