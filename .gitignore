@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# Build output
+out/
+dist/
+release/
+out-types/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# Electron builder
+*.blockmap
+
+# Test coverage
+coverage/
+
+# OCR data (optional, can be large)
+resources/tessdata/*.traineddata
