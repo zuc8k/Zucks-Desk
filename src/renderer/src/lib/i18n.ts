@@ -1,0 +1,91 @@
+import type { AppLanguage } from '@shared/types/settings'
+
+type Dict = Record<string, string>
+
+const en: Dict = {
+  'app.name': 'ZUCKS DESK',
+  'nav.dashboard': 'Dashboard',
+  'nav.capture': 'Screen Capture',
+  'nav.recorder': 'Recorder',
+  'nav.ocr': 'Text Recognition',
+  'nav.clipboard': 'Clipboard',
+  'nav.notes': 'Notes',
+  'nav.system': 'System Info',
+  'nav.settings': 'Settings',
+  'common.loading': 'Loading…',
+  'common.retry': 'Retry',
+  'common.cancel': 'Cancel',
+  'common.save': 'Save',
+  'common.delete': 'Delete',
+  'common.search': 'Search',
+  'common.empty': 'Nothing here yet.',
+  'dashboard.title': 'Welcome to ZUCKS DESK',
+  'dashboard.subtitle': 'Your all-in-one Windows productivity workspace.',
+  'settings.title': 'Settings',
+  'settings.theme': 'Theme',
+  'settings.theme.light': 'Light',
+  'settings.theme.dark': 'Dark',
+  'settings.theme.system': 'System',
+  'settings.language': 'Language',
+  'settings.language.en': 'English',
+  'settings.language.ar': 'العربية',
+  'settings.captureDir': 'Screenshots folder',
+  'settings.recordingDir': 'Recordings folder',
+  'settings.launchOnStartup': 'Launch with Windows',
+  'settings.enableClipboard': 'Enable clipboard history',
+  'settings.saved': 'Settings saved.',
+  'settings.saveFailed': 'Could not save settings.',
+  'system.cpu': 'CPU',
+  'system.memory': 'Memory',
+  'system.disk': 'Disk',
+  'system.os': 'Operating System',
+  'system.appVersion': 'App Version',
+  'notAvailable': 'This feature is not available yet in this build.'
+}
+
+const ar: Dict = {
+  'app.name': 'ZUCKS DESK',
+  'nav.dashboard': 'لوحة التحكم',
+  'nav.capture': 'التقاط الشاشة',
+  'nav.recorder': 'المسجل',
+  'nav.ocr': 'التعرف على النصوص',
+  'nav.clipboard': 'الحافظة',
+  'nav.notes': 'الملاحظات',
+  'nav.system': 'معلومات النظام',
+  'nav.settings': 'الإعدادات',
+  'common.loading': 'جارٍ التحميل…',
+  'common.retry': 'إعادة المحاولة',
+  'common.cancel': 'إلغاء',
+  'common.save': 'حفظ',
+  'common.delete': 'حذف',
+  'common.search': 'بحث',
+  'common.empty': 'لا يوجد شيء بعد.',
+  'dashboard.title': 'مرحبًا بك في ZUCKS DESK',
+  'dashboard.subtitle': 'مساحة عملك المتكاملة على Windows.',
+  'settings.title': 'الإعدادات',
+  'settings.theme': 'المظهر',
+  'settings.theme.light': 'فاتح',
+  'settings.theme.dark': 'داكن',
+  'settings.theme.system': 'النظام',
+  'settings.language': 'اللغة',
+  'settings.language.en': 'English',
+  'settings.language.ar': 'العربية',
+  'settings.captureDir': 'مجلد اللقطات',
+  'settings.recordingDir': 'مجلد التسجيلات',
+  'settings.launchOnStartup': 'التشغيل مع Windows',
+  'settings.enableClipboard': 'تفعيل سجل الحافظة',
+  'settings.saved': 'تم حفظ الإعدادات.',
+  'settings.saveFailed': 'تعذر حفظ الإعدادات.',
+  'system.cpu': 'المعالج',
+  'system.memory': 'الذاكرة',
+  'system.disk': 'القرص',
+  'system.os': 'نظام التشغيل',
+  'system.appVersion': 'إصدار التطبيق',
+  'notAvailable': 'هذه الميزة غير متاحة بعد في هذا الإصدار.'
+}
+
+const dictionaries: Record<AppLanguage, Dict> = { en, ar }
+
+export function t(lang: AppLanguage, key: string): string {
+  return dictionaries[lang][key] ?? key
+}
