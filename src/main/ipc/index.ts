@@ -1,13 +1,9 @@
-/**
- * Central IPC registration point.
- * Feature-specific handlers are added incrementally from their own files
- * (capture.ipc.ts, ocr.ipc.ts, ...) and imported here.
- *
- * Window controls are registered here because they are foundational.
- */
-
-import { BrowserWindow, ipcMain } from 'electron'
+import { BrowserWindow, ipcMain, nativeTheme } from 'electron'
 import { IPC_CHANNELS } from '@shared/constants'
+import { registerSettingsIpc } from './settings.ipc'
+import { registerSystemIpc } from './system.ipc'
+import { registerNotesIpc } from './notes.ipc'
+import { registerClipboardIpc } from './clipboard.ipc'
 
 export function registerIpcHandlers(): void {
   ipcMain.handle(IPC_CHANNELS.windowIsMaximized, (event): boolean => {
@@ -33,7 +29,11 @@ export function registerIpcHandlers(): void {
   })
 
   ipcMain.handle(IPC_CHANNELS.themeCurrent, (): 'light' | 'dark' => {
-    // Placeholder: real implementation reads nativeTheme.
-    return 'light'
+    return nativeTheme.shouldUseDarkColors ? 'dark' : 'light'
   })
+
+  registerSettingsIpc()
+  registerSystemIpc()
+  registerNotesIpc()
+  registerClipboardIpc()
 }
