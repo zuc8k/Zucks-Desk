@@ -1,9 +1,9 @@
 {
-  "name": "nexus-desk",
+  "name": "zucks-desk",
   "version": "0.1.0",
   "description": "Nexus Desk — an integrated Windows productivity, capture, and system utility suite.",
   "main": "./out/main/index.js",
-  "author": "Nexus Desk Contributors",
+  "author": "Zucks Desk Contributors",
   "license": "MIT",
   "private": true,
   "type": "module",
